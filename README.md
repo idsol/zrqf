@@ -8,7 +8,7 @@
 
 示例：並并幷併竝𠀤。
 
-![](image-20260517212252093.png)
+![](https://github.com/idsol/zrqf/blob/main/image-20260517212252093.png)
 
 如上圖，這一組異體字直觀地展示了本方案的特點：
 
