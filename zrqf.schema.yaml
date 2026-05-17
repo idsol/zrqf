@@ -1,0 +1,63 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: zrqf
+  name: 自然全分
+  version: "20260517"
+  author:
+    - sol
+  description: |
+    檢字法，全字集，高離散，低學習成本。
+
+switches:
+  - name: ascii_mode
+    states: [ Sp, En ]
+    reset: 0
+  - name: full_shape
+    states: [ Half, Full ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - reverse_lookup_translator
+    - table_translator
+  filters:
+    - uniquifier
+
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"
+
+translator:
+  dictionary: zrqf
+  prism: zrqf
+  enable_user_dict: false  # 顯式禁用用戶詞典
+  enable_sentence: false  # 可選：禁用造句（可能涉及詞頻）
+  initial_quality: 1.0  # 可選：固定詞條質量，不做動態調整
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "^`[a-z]*'?$"
